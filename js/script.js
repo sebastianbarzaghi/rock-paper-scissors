@@ -1,26 +1,39 @@
 const options = ["Rock", "Paper", "Scissors"];
 
+const computerChoiceMade = document.getElementById("computerChoice");
+const playerChoiceMade = document.getElementById("playerChoice");
+const singleGameResults = document.getElementById("singleGameResults");
+const globalGameResults = document.getElementById("globalGameResults");
+
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * options.length);
     const selectedOption = options[randomIndex];
     return selectedOption
 }
 
+let wins = 0;
+let losses = 0;
+let ties = 0;
+
 function playGame() {
-    let computerChoice = getComputerChoice()
-    console.log(computerChoice)
+    let computerChoice = getComputerChoice();
+    computerChoiceMade.innerHTML = `Computer: ${computerChoice}`;
 
     let playerOptions = document.getElementById("playerOptions");
     let playerChoice = playerOptions.value;
-    console.log(playerChoice)
+    playerChoiceMade.innerHTML = `Player: ${playerChoice}`;
 
     if (computerChoice == playerChoice) {
-        console.log(`${computerChoice} vs. ${playerChoice}: it's a tie!`)
+        singleGameResults.innerHTML = "It's a tie!";
+        ties++;
     } else if ((computerChoice == "Rock" && playerChoice == "Scissors")
                 || (computerChoice == "Scissors" && playerChoice == "Paper")
                 || (computerChoice == "Paper" && playerChoice == "Rock")) {
-        console.log("You lose!")
+        singleGameResults.innerHTML = "You lost!";
+        losses++;
     } else {
-        console.log("you win!")
+        singleGameResults.innerHTML = "You won!";
+        wins++;
     }
+    globalGameResults.innerHTML = `Wins: ${wins} - Losses: ${losses} - Ties: ${ties}`;
 }
