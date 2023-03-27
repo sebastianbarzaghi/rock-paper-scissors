@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div id="form">
-        <label for="playerOptions">Your choice: </label> 
-        <select id="playerOptions">
-            <option value="Rock">Rock</option>
-            <option value="Paper">Paper</option>
-            <option value="Scissors">Scissors</option>
-        </select>
-    </div>
-    <div id="submit">
-        <button id="playerButton" onclick="playGame()">Play</button>
-    </div>
-    <div id="choices">
-        <p id="playerChoice"></p>
-        <p id="computerChoice"></p>
-    </div>
-    <div id="results">
-        <p id="singleGameResults"></p>
-        <p id="globalGameResults"></p>
+    <div class="container">
+        <div id="submit">
+            <button class="rockButton" data-value="Rock"><i class="fas fa-gem"></i>Rock</button>
+            <button class="paperButton" data-value="Paper"><i class="fas fa-scroll"></i>Paper</button>
+            <button class="scissorsButton" data-value="Scissors"><i class="fas fa-hand-scissors"></i>Scissors</button>
+        </div>
+        <div id="choices">
+            <p id="playerChoice"></p>
+            <p id="computerChoice"></p>
+        </div>
+        <div id="results">
+            <p id="singleGameResults"></p>
+            <p id="globalGameResults"></p>
+            <!--
+                <table>
+                    <tr>
+                        <th>Player</th>
+                        <th>Computer</th>
+                        <th>Result</th>
+                    </tr>
+                </table>
+            -->
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

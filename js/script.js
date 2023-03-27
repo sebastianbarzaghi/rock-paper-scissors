@@ -9,6 +9,7 @@ const computerChoiceMade = document.getElementById("computerChoice");
 const playerChoiceMade = document.getElementById("playerChoice");
 const singleGameResults = document.getElementById("singleGameResults");
 const globalGameResults = document.getElementById("globalGameResults");
+const tableRow = document.querySelector("table");
 
 // get computer choice and return it
 function getComputerChoice() {
@@ -17,31 +18,53 @@ function getComputerChoice() {
     return selectedOption
 }
 
+// for each button, add an event listener that runs the playgame
+// function on click
+const buttons = document.querySelectorAll("button");
+buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        playGame(button.dataset.value)
+    });
+});
+
 // main function that starts and manages game logic, called when
-// clicking on #playerButton
-function playGame() {
+// clicking on any player button
+function playGame(buttonValue) {
     let computerChoice = getComputerChoice();
     computerChoiceMade.innerHTML = `Computer: ${computerChoice}`;
 
-    let playerOptions = document.getElementById("playerOptions");
-    let playerChoice = playerOptions.value;
+    let playerChoice = buttonValue;
     playerChoiceMade.innerHTML = `Player: ${playerChoice}`;
 
     if (computerChoice == playerChoice) {
         singleGameResults.innerHTML = "It's a tie!";
         ties++;
-    } else if ((computerChoice == "Rock" && 
+    } else if ((computerChoice == "Rock" &&
         playerChoice == "Scissors") ||
-        (computerChoice == "Scissors" && 
-        playerChoice == "Paper") ||
-        (computerChoice == "Paper" && 
-        playerChoice == "Rock")) {
-            singleGameResults.innerHTML = "You lost!";
-            losses++;
+        (computerChoice == "Scissors" &&
+            playerChoice == "Paper") ||
+        (computerChoice == "Paper" &&
+            playerChoice == "Rock")) {
+        singleGameResults.innerHTML = "You lost!";
+        losses++;
     } else {
         singleGameResults.innerHTML = "You won!";
         wins++;
     }
-    
+
     globalGameResults.innerHTML = `Wins: ${wins} - Losses: ${losses} - Ties: ${ties}`;
+
+    let newRow = document.createElement("tr");
+    for (let i = 0; i < 3; i++) {
+        let newTableData = document.createElement("td");
+        if (i == 0) {
+            newTableData.textContent = playerChoice;
+        } else if (i == 1) {
+            newTableData.textContent = computerChoice;
+        } else {
+            newTableData.textContent = singleGameResults.textContent;
+        };
+        newRow.append(newTableData);
+        tableRow.append(newRow);
+    }
 }
