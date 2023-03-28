@@ -1,0 +1,35 @@
+[33mcommit 3f8d1a4268ee5677f12acdc72e58cac52423dbb2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: sebastianbarzaghi <sebastian.barzaghi@outlook.com>
+Date:   Mon Mar 27 23:54:11 2023 +0200
+
+    fix: fix some errors in HTML code and add CSS code
+
+[33mcommit 7eb5024f5ca03e4be70ec53c00a2c97f2ff1e527[m[33m ([m[1;31morigin/rps-ui[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: sebastianbarzaghi <sebastian.barzaghi@outlook.com>
+Date:   Sun Mar 12 13:03:27 2023 +0100
+
+    fix: clean HTML and JS code and add comments
+
+[33mcommit 6a6e1ef072446d81efc2618166a47827e838bd78[m
+Author: sebastianbarzaghi <sebastian.barzaghi@outlook.com>
+Date:   Sun Mar 12 12:18:01 2023 +0100
+
+    fix: add HTML and JS code to print choices and results
+
+[33mcommit 5245453e5ecf626e994e27a121accdaa12f8322f[m
+Author: sebastianbarzaghi <sebastian.barzaghi@outlook.com>
+Date:   Sun Mar 12 11:46:45 2023 +0100
+
+    fix: fix JS code to implement the game's logic
+
+[33mcommit ca239c5b3f3d37d789e11e31f7fa91acf5011a5b[m
+Author: sebastianbarzaghi <sebastian.barzaghi@outlook.com>
+Date:   Sat Mar 11 17:46:19 2023 +0100
+
+    fix: add boilerplate HTML and begin JS code
+
+[33mcommit 4c9e8b596a64826a8634b0a7a052c25ba2822c54[m
+Author: Sebastian B <43120511+sebastianbarzaghi@users.noreply.github.com>
+Date:   Sat Mar 11 17:37:07 2023 +0100
+
+    Initial commit
